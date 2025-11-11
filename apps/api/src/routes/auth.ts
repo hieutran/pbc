@@ -1,153 +1,107 @@
 import { Hono } from 'hono'
 import { z } from 'zod'
 import type { Env } from '../types'
-import { HTTP_STATUS, ERROR_CODES } from '@pbc/shared'
+import { HTTP_STATUS } from '@pbc/shared'
+import { AuthService } from '../services/authService'
+import { ValidationError } from '../lib/errors'
+import { rateLimiter } from '../middleware/rateLimiter'
+import { RATE_LIMITS } from '../lib/rateLimiter'
+import { authMiddleware } from '../middleware/auth'
 
 const authRoutes = new Hono<{ Bindings: Env }>()
 
+// Apply rate limiting to auth routes
+authRoutes.use('*', rateLimiter(RATE_LIMITS.auth))
+
 // Validation schemas
 const registerSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
+  email: z.string().email('Invalid email address'),
+  password: z
+    .string()
+    .min(8, 'Password must be at least 8 characters')
+    .max(100, 'Password must be less than 100 characters'),
 })
 
 const loginSchema = z.object({
-  email: z.string().email(),
-  password: z.string(),
+  email: z.string().email('Invalid email address'),
+  password: z.string().min(1, 'Password is required'),
+})
+
+const refreshSchema = z.object({
+  refreshToken: z.string().min(1, 'Refresh token is required'),
 })
 
 // Register
 authRoutes.post('/register', async c => {
-  try {
-    const body = await c.req.json()
-    const { email, password } = registerSchema.parse(body)
+  const body = await c.req.json()
 
-    // TODO: Implement actual registration logic
-    // 1. Hash password with Argon2id
-    // 2. Check if user exists
-    // 3. Create user in D1
-    // 4. Generate JWT tokens
-    // 5. Store refresh token in KV
-
-    return c.json(
-      {
-        success: true,
-        data: {
-          user: {
-            id: 'user-123',
-            email,
-            createdAt: new Date().toISOString(),
-          },
-          tokens: {
-            accessToken: 'mock-access-token',
-            refreshToken: 'mock-refresh-token',
-          },
-        },
-      },
-      HTTP_STATUS.CREATED
-    )
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return c.json(
-        {
-          success: false,
-          error: {
-            code: ERROR_CODES.VALIDATION_ERROR,
-            message: 'Invalid input',
-            details: error.errors,
-          },
-        },
-        HTTP_STATUS.BAD_REQUEST
-      )
-    }
-    throw error
+  // Validate input
+  const result = registerSchema.safeParse(body)
+  if (!result.success) {
+    throw new ValidationError('Invalid input', result.error.errors)
   }
+
+  const authService = new AuthService(c.env, c.env.DB)
+  const data = await authService.register(result.data)
+
+  return c.json(
+    {
+      success: true,
+      data,
+    },
+    HTTP_STATUS.CREATED
+  )
 })
 
 // Login
 authRoutes.post('/login', async c => {
-  try {
-    const body = await c.req.json()
-    const { email, password } = loginSchema.parse(body)
+  const body = await c.req.json()
 
-    // TODO: Implement actual login logic
-    // 1. Find user in D1
-    // 2. Verify password
-    // 3. Generate JWT tokens
-    // 4. Store refresh token in KV
-
-    return c.json({
-      success: true,
-      data: {
-        user: {
-          id: 'user-123',
-          email,
-          createdAt: new Date().toISOString(),
-        },
-        tokens: {
-          accessToken: 'mock-access-token',
-          refreshToken: 'mock-refresh-token',
-        },
-      },
-    })
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return c.json(
-        {
-          success: false,
-          error: {
-            code: ERROR_CODES.VALIDATION_ERROR,
-            message: 'Invalid input',
-            details: error.errors,
-          },
-        },
-        HTTP_STATUS.BAD_REQUEST
-      )
-    }
-    throw error
+  // Validate input
+  const result = loginSchema.safeParse(body)
+  if (!result.success) {
+    throw new ValidationError('Invalid input', result.error.errors)
   }
+
+  const authService = new AuthService(c.env, c.env.DB)
+  const data = await authService.login(result.data)
+
+  return c.json({
+    success: true,
+    data,
+  })
 })
 
 // Refresh token
 authRoutes.post('/refresh', async c => {
-  try {
-    const { refreshToken } = await c.req.json()
+  const body = await c.req.json()
 
-    // TODO: Implement token refresh logic
-    // 1. Verify refresh token
-    // 2. Check if token exists in KV
-    // 3. Generate new access token
-    // 4. Optionally rotate refresh token
-
-    return c.json({
-      success: true,
-      data: {
-        tokens: {
-          accessToken: 'new-access-token',
-          refreshToken: 'new-refresh-token',
-        },
-      },
-    })
-  } catch (error) {
-    throw error
+  // Validate input
+  const result = refreshSchema.safeParse(body)
+  if (!result.success) {
+    throw new ValidationError('Invalid input', result.error.errors)
   }
+
+  const authService = new AuthService(c.env, c.env.DB)
+  const tokens = await authService.refreshToken(result.data.refreshToken)
+
+  return c.json({
+    success: true,
+    data: { tokens },
+  })
 })
 
-// Logout
-authRoutes.post('/logout', async c => {
-  try {
-    // TODO: Implement logout logic
-    // 1. Get refresh token from request
-    // 2. Remove from KV
-    // 3. Optionally blacklist access token
+// Logout (requires authentication)
+authRoutes.post('/logout', authMiddleware, async c => {
+  const userId = c.get('userId') as string
 
-    return c.json({
-      success: true,
-      data: { message: 'Logged out successfully' },
-    })
-  } catch (error) {
-    throw error
-  }
+  const authService = new AuthService(c.env, c.env.DB)
+  await authService.logout(userId)
+
+  return c.json({
+    success: true,
+    data: { message: 'Logged out successfully' },
+  })
 })
 
 export { authRoutes }

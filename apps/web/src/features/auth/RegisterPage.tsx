@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/lib/store/authStore'
+import { authApi, ApiError } from '@/lib/api'
 
 export function RegisterPage() {
   const [email, setEmail] = useState('')
@@ -28,22 +29,15 @@ export function RegisterPage() {
     setLoading(true)
 
     try {
-      // TODO: Replace with actual API call
-      const response = await fetch('/api/v1/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Registration failed')
-      }
-
-      const { data } = await response.json()
-      setAuth(data.user, data.tokens.accessToken)
+      const data = await authApi.register({ email, password })
+      setAuth(data.user, data.tokens.accessToken, data.tokens.refreshToken)
       navigate('/dashboard')
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Registration failed')
+      if (err instanceof ApiError) {
+        setError(err.message)
+      } else {
+        setError('Registration failed. Please try again.')
+      }
     } finally {
       setLoading(false)
     }

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/lib/store/authStore'
+import { authApi, ApiError } from '@/lib/api'
 
 export function LoginPage() {
   const [email, setEmail] = useState('')
@@ -16,22 +17,15 @@ export function LoginPage() {
     setLoading(true)
 
     try {
-      // TODO: Replace with actual API call
-      const response = await fetch('/api/v1/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Invalid credentials')
-      }
-
-      const { data } = await response.json()
-      setAuth(data.user, data.tokens.accessToken)
+      const data = await authApi.login({ email, password })
+      setAuth(data.user, data.tokens.accessToken, data.tokens.refreshToken)
       navigate('/dashboard')
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Login failed')
+      if (err instanceof ApiError) {
+        setError(err.message)
+      } else {
+        setError('Login failed. Please try again.')
+      }
     } finally {
       setLoading(false)
     }

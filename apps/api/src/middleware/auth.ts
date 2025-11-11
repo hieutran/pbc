@@ -1,29 +1,29 @@
 import type { Context, Next } from 'hono'
-import type { Env, JWTPayload } from '../types'
-import { HTTP_STATUS, ERROR_CODES } from '@pbc/shared'
+import type { Env } from '../types'
+import { verifyToken } from '../lib/jwt'
+import { AuthenticationError } from '../lib/errors'
 
+/**
+ * Authentication middleware
+ * Verifies JWT token and attaches user info to context
+ */
 export async function authMiddleware(c: Context<{ Bindings: Env }>, next: Next) {
   const authHeader = c.req.header('Authorization')
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return c.json(
-      {
-        success: false,
-        error: {
-          code: ERROR_CODES.UNAUTHORIZED,
-          message: 'Missing or invalid authorization header',
-        },
-      },
-      HTTP_STATUS.UNAUTHORIZED
-    )
+    throw new AuthenticationError('Missing or invalid authorization header')
   }
 
   const token = authHeader.substring(7)
 
   try {
-    // TODO: Implement actual JWT verification
-    // For now, this is a placeholder
-    const payload: JWTPayload = JSON.parse(atob(token.split('.')[1]))
+    // Verify token
+    const payload = await verifyToken(token, c.env.JWT_SECRET)
+
+    // Check token type
+    if (payload.type !== 'access') {
+      throw new AuthenticationError('Invalid token type')
+    }
 
     // Store user info in context
     c.set('userId', payload.userId)
@@ -31,15 +31,9 @@ export async function authMiddleware(c: Context<{ Bindings: Env }>, next: Next) 
 
     await next()
   } catch (error) {
-    return c.json(
-      {
-        success: false,
-        error: {
-          code: ERROR_CODES.INVALID_TOKEN,
-          message: 'Invalid or expired token',
-        },
-      },
-      HTTP_STATUS.UNAUTHORIZED
-    )
+    if (error instanceof Error) {
+      throw new AuthenticationError(error.message)
+    }
+    throw new AuthenticationError('Authentication failed')
   }
 }
