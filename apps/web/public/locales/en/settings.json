@@ -1,0 +1,56 @@
+{
+  "title": "Settings",
+  "subtitle": "Customize your experience",
+  "sections": {
+    "general": "General",
+    "appearance": "Appearance",
+    "notifications": "Notifications",
+    "account": "Account"
+  },
+  "general": {
+    "language": {
+      "label": "Language",
+      "description": "Choose your preferred language"
+    },
+    "defaultTechnique": {
+      "label": "Default Technique",
+      "description": "Your preferred breathing technique"
+    }
+  },
+  "appearance": {
+    "theme": {
+      "label": "Theme",
+      "description": "Choose your color theme",
+      "light": "Light",
+      "dark": "Dark",
+      "auto": "Auto (System)"
+    },
+    "sound": {
+      "label": "Sound Effects",
+      "description": "Play audio cues during exercises"
+    }
+  },
+  "notifications": {
+    "reminders": {
+      "label": "Practice Reminders",
+      "description": "Get reminded to practice daily"
+    },
+    "reminderTime": {
+      "label": "Reminder Time",
+      "description": "When to send reminders"
+    }
+  },
+  "account": {
+    "email": "Email",
+    "changePassword": "Change Password",
+    "deleteAccount": "Delete Account",
+    "logout": "Logout"
+  },
+  "actions": {
+    "save": "Save Changes",
+    "saving": "Saving...",
+    "saved": "Settings saved successfully",
+    "cancel": "Cancel",
+    "reset": "Reset to Defaults"
+  }
+}

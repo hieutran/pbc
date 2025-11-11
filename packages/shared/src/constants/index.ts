@@ -1,4 +1,5 @@
 export * from './techniques'
+export * from './locales'
 
 export const API_VERSION = 'v1'
 export const ACCESS_TOKEN_EXPIRY = 15 * 60 // 15 minutes in seconds

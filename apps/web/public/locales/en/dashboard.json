@@ -1,0 +1,22 @@
+{
+  "welcome": "Welcome back, {{name}}",
+  "subtitle": "Choose a breathing technique to begin your practice",
+  "stats": {
+    "title": "Your Progress",
+    "totalSessions": "Total Sessions",
+    "totalDuration": "Total Duration",
+    "totalCycles": "Total Cycles",
+    "currentStreak": "Current Streak",
+    "longestStreak": "Longest Streak",
+    "favoriteTechnique": "Favorite Technique"
+  },
+  "recentSessions": {
+    "title": "Recent Sessions",
+    "noSessions": "No sessions yet. Start your first breathing exercise!",
+    "viewAll": "View All"
+  },
+  "quickStart": {
+    "title": "Quick Start",
+    "selectTechnique": "Select a technique to begin"
+  }
+}

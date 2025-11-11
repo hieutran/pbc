@@ -5,9 +5,12 @@ export interface User {
   settings?: UserSettings
 }
 
+import type { SupportedLocale } from '../constants/locales'
+
 export interface UserSettings {
   defaultTechnique?: BreathingTechnique
   theme?: 'light' | 'dark' | 'auto'
+  language?: SupportedLocale
   soundEnabled?: boolean
   reminderEnabled?: boolean
   reminderTime?: string

@@ -1,0 +1,52 @@
+{
+  "app": {
+    "name": "Personal Breath Coach",
+    "tagline": "Find Your Breath, Find Your Peace"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "history": "History",
+    "login": "Login",
+    "register": "Get Started",
+    "logout": "Logout"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "settings": "Settings",
+    "profile": "Profile",
+    "language": "Language"
+  },
+  "time": {
+    "seconds": "{{count}} second",
+    "seconds_plural": "{{count}} seconds",
+    "minutes": "{{count}} minute",
+    "minutes_plural": "{{count}} minutes",
+    "hours": "{{count}} hour",
+    "hours_plural": "{{count}} hours",
+    "days": "{{count}} day",
+    "days_plural": "{{count}} days"
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "notFound": "Resource not found.",
+    "validation": "Please check your input and try again.",
+    "serverError": "Server error. Please try again later."
+  }
+}

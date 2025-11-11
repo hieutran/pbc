@@ -36,6 +36,7 @@ userRoutes.get('/me', async c => {
 const updateSettingsSchema = z.object({
   defaultTechnique: z.string().optional(),
   theme: z.enum(['light', 'dark', 'auto']).optional(),
+  language: z.enum(['en', 'vi', 'es', 'fr', 'de', 'ja', 'zh']).optional(),
   soundEnabled: z.boolean().optional(),
   reminderEnabled: z.boolean().optional(),
   reminderTime: z.string().optional(),

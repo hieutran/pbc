@@ -1,0 +1,37 @@
+{
+  "title": "Practice History",
+  "subtitle": "Track your breathing journey",
+  "empty": {
+    "title": "No practice sessions yet",
+    "message": "Start your first breathing exercise to see your history here.",
+    "action": "Start Practicing"
+  },
+  "filters": {
+    "all": "All Techniques",
+    "dateRange": "Date Range",
+    "sortBy": "Sort By",
+    "newest": "Newest First",
+    "oldest": "Oldest First",
+    "longest": "Longest Duration"
+  },
+  "session": {
+    "duration": "Duration",
+    "cycles": "Cycles",
+    "completedAt": "Completed",
+    "technique": "Technique",
+    "viewDetails": "View Details",
+    "delete": "Delete"
+  },
+  "stats": {
+    "totalSessions": "Total Sessions",
+    "totalTime": "Total Time",
+    "avgDuration": "Average Duration",
+    "thisWeek": "This Week",
+    "thisMonth": "This Month",
+    "allTime": "All Time"
+  },
+  "calendar": {
+    "title": "Practice Calendar",
+    "noData": "No sessions this day"
+  }
+}

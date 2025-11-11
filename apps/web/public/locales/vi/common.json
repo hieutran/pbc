@@ -1,0 +1,52 @@
+{
+  "app": {
+    "name": "Huấn Luyện Viên Hơi Thở",
+    "tagline": "Tìm Hơi Thở, Tìm Bình An"
+  },
+  "navigation": {
+    "home": "Trang Chủ",
+    "dashboard": "Bảng Điều Khiển",
+    "history": "Lịch Sử",
+    "login": "Đăng Nhập",
+    "register": "Bắt Đầu",
+    "logout": "Đăng Xuất"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "submit": "Gửi",
+    "confirm": "Xác nhận",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "sort": "Sắp xếp",
+    "settings": "Cài đặt",
+    "profile": "Hồ sơ",
+    "language": "Ngôn ngữ"
+  },
+  "time": {
+    "seconds": "{{count}} giây",
+    "seconds_plural": "{{count}} giây",
+    "minutes": "{{count}} phút",
+    "minutes_plural": "{{count}} phút",
+    "hours": "{{count}} giờ",
+    "hours_plural": "{{count}} giờ",
+    "days": "{{count}} ngày",
+    "days_plural": "{{count}} ngày"
+  },
+  "errors": {
+    "generic": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "network": "Lỗi kết nối. Vui lòng kiểm tra kết nối của bạn.",
+    "unauthorized": "Bạn không có quyền thực hiện hành động này.",
+    "notFound": "Không tìm thấy tài nguyên.",
+    "validation": "Vui lòng kiểm tra dữ liệu nhập và thử lại.",
+    "serverError": "Lỗi máy chủ. Vui lòng thử lại sau."
+  }
+}

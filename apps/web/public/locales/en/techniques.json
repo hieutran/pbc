@@ -1,0 +1,140 @@
+{
+  "title": "Breathing Techniques",
+  "subtitle": "Discover the power of conscious breathing",
+  "difficulty": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "nadi-shodhana": {
+    "name": "Nadi Shodhana",
+    "description": "Alternate nostril breathing for balance and calm",
+    "benefits": {
+      "1": "Balances left and right hemispheres",
+      "2": "Reduces stress and anxiety",
+      "3": "Improves focus and concentration",
+      "4": "Calms the nervous system"
+    },
+    "instructions": {
+      "1": "Sit comfortably with spine straight",
+      "2": "Use right thumb to close right nostril",
+      "3": "Inhale through left nostril",
+      "4": "Close left nostril, open right, exhale",
+      "5": "Inhale through right nostril",
+      "6": "Close right, open left, exhale",
+      "7": "This completes one cycle"
+    }
+  },
+  "ujjayi": {
+    "name": "Ujjayi",
+    "description": "Ocean breath for grounding and warmth",
+    "benefits": {
+      "1": "Increases oxygen intake",
+      "2": "Builds internal heat",
+      "3": "Improves concentration",
+      "4": "Calms the mind"
+    },
+    "instructions": {
+      "1": "Sit or lie comfortably",
+      "2": "Slightly constrict the back of your throat",
+      "3": "Breathe through your nose",
+      "4": "Create a soft ocean sound",
+      "5": "Keep the breath smooth and even",
+      "6": "Maintain the constriction on both inhale and exhale"
+    }
+  },
+  "kapalbhati": {
+    "name": "Kapalbhati",
+    "description": "Skull shining breath for energy and clarity",
+    "benefits": {
+      "1": "Energizes the body",
+      "2": "Clears the mind",
+      "3": "Strengthens abdominal muscles",
+      "4": "Improves digestion"
+    },
+    "instructions": {
+      "1": "Sit with spine straight",
+      "2": "Take a deep breath in",
+      "3": "Exhale forcefully through the nose",
+      "4": "Let the inhale happen passively",
+      "5": "Focus on short, powerful exhales",
+      "6": "Start with 30 cycles, rest, repeat"
+    }
+  },
+  "bhramari": {
+    "name": "Bhramari",
+    "description": "Bee breath for instant calm",
+    "benefits": {
+      "1": "Reduces stress immediately",
+      "2": "Lowers blood pressure",
+      "3": "Improves sleep quality",
+      "4": "Enhances focus"
+    },
+    "instructions": {
+      "1": "Sit comfortably with eyes closed",
+      "2": "Place index fingers on ears (optional)",
+      "3": "Inhale deeply through the nose",
+      "4": "Exhale while making a humming sound",
+      "5": "Feel the vibration in your head",
+      "6": "Repeat 5-10 times"
+    }
+  },
+  "wim-hof": {
+    "name": "Wim Hof Method",
+    "description": "Powerful breathing for energy and resilience",
+    "benefits": {
+      "1": "Increases energy levels",
+      "2": "Boosts immune system",
+      "3": "Reduces inflammation",
+      "4": "Improves mental clarity"
+    },
+    "instructions": {
+      "1": "Lie down or sit comfortably",
+      "2": "Take 30-40 deep, quick breaths",
+      "3": "Fully in through nose or mouth",
+      "4": "Let go without force on exhale",
+      "5": "After last exhale, hold breath",
+      "6": "Hold until you feel the urge to breathe",
+      "7": "Inhale deeply and hold for 15 seconds",
+      "8": "Repeat for 3 rounds"
+    }
+  },
+  "box-breathing": {
+    "name": "Box Breathing",
+    "description": "Four-square breathing for focus and calm",
+    "benefits": {
+      "1": "Reduces stress and anxiety",
+      "2": "Improves focus",
+      "3": "Regulates nervous system",
+      "4": "Enhances performance under pressure"
+    },
+    "instructions": {
+      "1": "Sit comfortably with spine straight",
+      "2": "Exhale all air from your lungs",
+      "3": "Inhale for 4 counts",
+      "4": "Hold for 4 counts",
+      "5": "Exhale for 4 counts",
+      "6": "Hold for 4 counts",
+      "7": "Repeat"
+    }
+  },
+  "4-7-8": {
+    "name": "4-7-8 Breathing",
+    "description": "Relaxing breath for sleep and anxiety",
+    "benefits": {
+      "1": "Promotes deep relaxation",
+      "2": "Helps with falling asleep",
+      "3": "Reduces anxiety",
+      "4": "Lowers blood pressure"
+    },
+    "instructions": {
+      "1": "Sit or lie comfortably",
+      "2": "Place tongue tip behind upper front teeth",
+      "3": "Exhale completely through mouth",
+      "4": "Close mouth, inhale through nose for 4 counts",
+      "5": "Hold breath for 7 counts",
+      "6": "Exhale through mouth for 8 counts",
+      "7": "Repeat 3-4 times"
+    }
+  }
+}

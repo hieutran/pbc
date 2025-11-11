@@ -1,0 +1,37 @@
+{
+  "title": "Exercise",
+  "instructions": "Instructions",
+  "benefits": "Benefits",
+  "settings": {
+    "title": "Settings",
+    "duration": "Duration",
+    "cycles": "Cycles",
+    "pace": "Pace",
+    "sound": "Sound",
+    "haptic": "Haptic Feedback"
+  },
+  "controls": {
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "reset": "Reset"
+  },
+  "phases": {
+    "inhale": "Inhale",
+    "exhale": "Exhale",
+    "hold": "Hold",
+    "holdInhale": "Hold (after inhale)",
+    "holdExhale": "Hold (after exhale)",
+    "relax": "Relax"
+  },
+  "completion": {
+    "title": "Session Complete!",
+    "duration": "Duration",
+    "cycles": "Cycles Completed",
+    "saveSuccess": "Session saved successfully",
+    "saveFailed": "Failed to save session",
+    "backToDashboard": "Back to Dashboard",
+    "startAnother": "Start Another Session"
+  }
+}
