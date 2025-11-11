@@ -38,6 +38,11 @@ const updateSettingsSchema = z.object({
   theme: z.enum(['light', 'dark', 'auto']).optional(),
   language: z.enum(['en', 'vi', 'es', 'fr', 'de', 'ja', 'zh']).optional(),
   soundEnabled: z.boolean().optional(),
+  tickSoundEnabled: z.boolean().optional(),
+  backgroundMusicEnabled: z.boolean().optional(),
+  backgroundMusicType: z.enum(['zen', 'nature', 'rain', 'ocean', 'forest', 'none']).optional(),
+  audioVolume: z.number().min(0).max(100).optional(),
+  musicVolume: z.number().min(0).max(100).optional(),
   reminderEnabled: z.boolean().optional(),
   reminderTime: z.string().optional(),
 })

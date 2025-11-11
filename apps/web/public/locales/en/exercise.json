@@ -2,6 +2,8 @@
   "title": "Exercise",
   "instructions": "Instructions",
   "benefits": "Benefits",
+  "notFound": "Technique not found",
+  "notFoundDescription": "The breathing technique you're looking for doesn't exist.",
   "settings": {
     "title": "Settings",
     "duration": "Duration",
@@ -10,11 +12,41 @@
     "sound": "Sound",
     "haptic": "Haptic Feedback"
   },
+  "audio": {
+    "title": "Audio Settings",
+    "show": "Show Audio Settings",
+    "hide": "Hide Audio Settings",
+    "tickSound": "Tick Sound",
+    "tickSoundDescription": "Play a tick sound every second",
+    "tickVolume": "Tick Volume",
+    "backgroundMusic": "Background Music",
+    "backgroundMusicDescription": "Play relaxing background music",
+    "musicType": "Music Type",
+    "musicVolume": "Music Volume",
+    "musicTypes": {
+      "zen": "Zen Garden",
+      "zenDescription": "Peaceful meditation bells and ambient sounds",
+      "nature": "Nature Sounds",
+      "natureDescription": "Birds chirping and gentle wind",
+      "rain": "Rain",
+      "rainDescription": "Soft rainfall and distant thunder",
+      "ocean": "Ocean Waves",
+      "oceanDescription": "Calming ocean waves on the shore",
+      "forest": "Forest",
+      "forestDescription": "Forest ambience with wildlife",
+      "none": "No Music"
+    },
+    "enabled": "enabled",
+    "playing": "Playing",
+    "initializeFailed": "Failed to initialize audio. Please check your browser settings."
+  },
   "controls": {
     "start": "Start",
+    "startExercise": "Start Exercise",
     "pause": "Pause",
     "resume": "Resume",
     "stop": "Stop",
+    "stopExercise": "Stop Exercise",
     "reset": "Reset"
   },
   "phases": {

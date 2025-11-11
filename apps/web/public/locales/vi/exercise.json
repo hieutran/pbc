@@ -1,0 +1,69 @@
+{
+  "title": "Bài Tập",
+  "instructions": "Hướng Dẫn",
+  "benefits": "Lợi Ích",
+  "notFound": "Không tìm thấy kỹ thuật",
+  "notFoundDescription": "Kỹ thuật hô hấp bạn đang tìm không tồn tại.",
+  "settings": {
+    "title": "Cài Đặt",
+    "duration": "Thời Lượng",
+    "cycles": "Chu Kỳ",
+    "pace": "Nhịp Độ",
+    "sound": "Âm Thanh",
+    "haptic": "Phản Hồi Xúc Giác"
+  },
+  "audio": {
+    "title": "Cài Đặt Âm Thanh",
+    "show": "Hiện Cài Đặt Âm Thanh",
+    "hide": "Ẩn Cài Đặt Âm Thanh",
+    "tickSound": "Tiếng Tích Tắc",
+    "tickSoundDescription": "Phát tiếng tích tắc mỗi giây",
+    "tickVolume": "Âm Lượng Tích Tắc",
+    "backgroundMusic": "Nhạc Nền",
+    "backgroundMusicDescription": "Phát nhạc nền thư giãn",
+    "musicType": "Loại Nhạc",
+    "musicVolume": "Âm Lượng Nhạc",
+    "musicTypes": {
+      "zen": "Vườn Thiền",
+      "zenDescription": "Tiếng chuông thiền định và âm thanh xung quanh yên bình",
+      "nature": "Âm Thanh Thiên Nhiên",
+      "natureDescription": "Chim hót và gió nhẹ nhàng",
+      "rain": "Mưa",
+      "rainDescription": "Tiếng mưa nhẹ và sấm xa",
+      "ocean": "Sóng Biển",
+      "oceanDescription": "Sóng biển êm dịu trên bờ",
+      "forest": "Rừng",
+      "forestDescription": "Âm thanh rừng với động vật hoang dã",
+      "none": "Không Có Nhạc"
+    },
+    "enabled": "đã bật",
+    "playing": "Đang Phát",
+    "initializeFailed": "Không thể khởi tạo âm thanh. Vui lòng kiểm tra cài đặt trình duyệt."
+  },
+  "controls": {
+    "start": "Bắt Đầu",
+    "startExercise": "Bắt Đầu Bài Tập",
+    "pause": "Tạm Dừng",
+    "resume": "Tiếp Tục",
+    "stop": "Dừng",
+    "stopExercise": "Dừng Bài Tập",
+    "reset": "Đặt Lại"
+  },
+  "phases": {
+    "inhale": "Hít Vào",
+    "exhale": "Thở Ra",
+    "hold": "Nín Thở",
+    "holdInhale": "Nín (sau khi hít vào)",
+    "holdExhale": "Nín (sau khi thở ra)",
+    "relax": "Thư Giãn"
+  },
+  "completion": {
+    "title": "Hoàn Thành Phiên!",
+    "duration": "Thời Lượng",
+    "cycles": "Chu Kỳ Hoàn Thành",
+    "saveSuccess": "Đã lưu phiên thành công",
+    "saveFailed": "Không thể lưu phiên",
+    "backToDashboard": "Quay Lại Bảng Điều Khiển",
+    "startAnother": "Bắt Đầu Phiên Khác"
+  }
+}

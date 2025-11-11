@@ -7,11 +7,18 @@ export interface User {
 
 import type { SupportedLocale } from '../constants/locales'
 
+export type BackgroundMusicType = 'zen' | 'nature' | 'rain' | 'ocean' | 'forest' | 'none'
+
 export interface UserSettings {
   defaultTechnique?: BreathingTechnique
   theme?: 'light' | 'dark' | 'auto'
   language?: SupportedLocale
   soundEnabled?: boolean
+  tickSoundEnabled?: boolean
+  backgroundMusicEnabled?: boolean
+  backgroundMusicType?: BackgroundMusicType
+  audioVolume?: number // 0-100
+  musicVolume?: number // 0-100
   reminderEnabled?: boolean
   reminderTime?: string
 }
