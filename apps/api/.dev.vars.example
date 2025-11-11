@@ -1,0 +1,9 @@
+# Development environment variables
+# Copy this file to .dev.vars and fill in the values
+
+JWT_SECRET=your-jwt-secret-key-change-this-in-production
+REFRESH_SECRET=your-refresh-secret-key-change-this-in-production
+
+# Note: In production, use wrangler secrets instead:
+# wrangler secret put JWT_SECRET
+# wrangler secret put REFRESH_SECRET

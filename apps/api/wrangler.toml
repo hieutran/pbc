@@ -1,0 +1,32 @@
+name = "pbc-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Development
+[env.dev]
+workers_dev = true
+
+# Production
+[env.production]
+workers_dev = false
+routes = [{ pattern = "api.breathcoach.app/*", zone_name = "breathcoach.app" }]
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "pbc-db"
+database_id = "local-db-id"
+migrations_dir = "migrations"
+
+# KV Namespace for sessions/rate limiting
+[[kv_namespaces]]
+binding = "KV"
+id = "local-kv-id"
+
+# Environment Variables (set via wrangler secret)
+# JWT_SECRET - set via: wrangler secret put JWT_SECRET
+# REFRESH_SECRET - set via: wrangler secret put REFRESH_SECRET
+
+[vars]
+API_VERSION = "v1"
+ENVIRONMENT = "development"

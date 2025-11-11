@@ -1,0 +1,45 @@
+{
+  "name": "personal-breath-coach",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A minimalist breath training application with various breathing techniques",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hieutran/pbc.git"
+  },
+  "keywords": [
+    "breathing",
+    "meditation",
+    "yoga",
+    "wellness",
+    "pranayama"
+  ],
+  "author": "Hieu Tran",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "dev": "pnpm --parallel --stream dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "pnpm --filter api dev",
+    "build": "pnpm --recursive build",
+    "build:web": "pnpm --filter web build",
+    "build:api": "pnpm --filter api build",
+    "test": "pnpm --recursive test",
+    "lint": "pnpm --recursive lint",
+    "type-check": "pnpm --recursive type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "clean": "pnpm --recursive clean && rm -rf node_modules",
+    "deploy:web": "pnpm --filter web deploy",
+    "deploy:api": "pnpm --filter api deploy"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  }
+}

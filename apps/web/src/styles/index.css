@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-zen-200;
+  }
+
+  body {
+    @apply bg-zen-50 text-zen-900 antialiased;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-zen-800 text-white hover:bg-zen-900 focus:ring-zen-700;
+  }
+
+  .btn-secondary {
+    @apply btn bg-zen-100 text-zen-900 hover:bg-zen-200 focus:ring-zen-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-zen-200 p-6;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-zen-300 focus:border-zen-500 focus:ring-2 focus:ring-zen-200 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
